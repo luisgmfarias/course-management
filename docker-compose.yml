@@ -1,6 +1,13 @@
 version: "3.8"
 
 services:
+  mongo:
+    image: mongo:4.4.6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
   backend:
     build: ./backend
     ports:
@@ -14,12 +21,19 @@ services:
       - /app/node_modules
     command: npm run dev
 
-  mongo:
-    image: mongo:4.4.6
+  frontend:
+    build: ./frontend
     ports:
-      - "27017:27017"
+      - "3000:3000"
+    depends_on:
+      - backend
     volumes:
-      - mongo-data:/data/db
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://backend:5000
+    command: npm start
 
 volumes:
   mongo-data:
