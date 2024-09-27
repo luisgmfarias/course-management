@@ -2,22 +2,22 @@ import React from "react";
 import Form from "./components/Form";
 import SearchBar from "./components/SearchBar";
 import List from "./components/List";
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
 const App = () => {
   return (
-    <div className="App">
-      <Text fontSize="4xl" as="b">
-        Course magement
+    <Flex direction="column" className="App" padding={10}>
+      <Text fontSize="4xl" as="b" my={"auto"}>
+        Course management
       </Text>
-      <Flex direction="row">
+      <Flex direction="row" width="100%">
         <Form />
-        <Flex direction="column">
+        <Flex direction="column" alignItems="center" width={600}>
           <SearchBar />
           <List />
         </Flex>
       </Flex>
-    </div>
+    </Flex>
   );
 };
 
