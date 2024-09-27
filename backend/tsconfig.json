@@ -3,7 +3,7 @@
     "target": "ES6",
     "module": "CommonJS",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "strict": true,
     "esModuleInterop": true,
     "types": ["node", "jest"],
@@ -15,6 +15,8 @@
     "src/controllers/**/*",
     "src/models/**/*",
     "src/routes/**/*",
-    "src/server.ts"
-  ]
+    "src/server.ts",
+    "jest.config.ts"
+  ],
+  "exclude": ["node_modules"]
 }
