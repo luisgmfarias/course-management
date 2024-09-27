@@ -15,7 +15,7 @@ export const searchCourses = async (req: Request, res: Response) => {
   const { q } = req.query;
   try {
     const courses = await Course.find({
-      description: { $regex: q as string, $options: "i" },
+      subject: { $regex: q as string, $options: "i" },
     });
     res.json(courses);
   } catch (error: any) {
