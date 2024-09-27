@@ -1,2 +1,7 @@
 # course-management
-Assignment
+
+Build and run whole application.
+
+```sh
+docker-compose up --build
+```
