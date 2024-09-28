@@ -9,6 +9,6 @@ docker-compose up --build
 To run test suite.
 
 ```sh
-npm test
+cd backend
 npm run test:watch
 ```
