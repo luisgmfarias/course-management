@@ -6,6 +6,7 @@ import {
   FormLabel,
   Input,
   Heading,
+  Textarea,
 } from "@chakra-ui/react";
 
 const Form = () => {
@@ -51,8 +52,7 @@ const Form = () => {
       </FormControl>
       <FormControl id="description" mb={4} isRequired>
         <FormLabel>Description</FormLabel>
-        <Input
-          type="text"
+        <Textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

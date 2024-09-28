@@ -20,12 +20,10 @@ const SearchBar: React.FC = () => {
       borderWidth={1}
       borderRadius="md"
       boxShadow="sm"
-      maxWidth="400px"
+      width="100%"
+      maxWidth="800px"
       mt={6}
     >
-      <Heading as="h2" size="md" mb={4} textAlign="center">
-        Search Courses
-      </Heading>
       <FormControl id="search" mb={4}>
         <FormLabel>Search by Subject</FormLabel>
         <Input

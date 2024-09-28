@@ -11,8 +11,10 @@ const App = () => {
         Course management
       </Text>
       <Flex direction="row" width="100%">
-        <Form />
-        <Flex direction="column" alignItems="center" width={600}>
+        <Box>
+          <Form />
+        </Box>
+        <Flex direction="column" alignItems="center" width={600} ml={10}>
           <SearchBar />
           <List />
         </Flex>

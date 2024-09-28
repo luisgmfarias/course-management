@@ -19,16 +19,26 @@ const List = () => {
       <Heading as="h2" size="md" mb={4} textAlign="center">
         Current Courses
       </Heading>
-      <ChakraList spacing={3}>
+      <ChakraList display="flex" justifyContent="space-between" flexWrap="wrap">
         {courses?.map((course) => (
-          <ListItem key={course._id} borderWidth={1} borderRadius="md" p={4}>
+          <ListItem
+            key={course._id}
+            borderWidth={1}
+            mr={5}
+            mt={5}
+            width={270}
+            borderRadius="md"
+            p={4}
+          >
             <Flex alignItems="center">
-              <Text>
-                <strong>
-                  {course.subject} {course.courseNumber}
-                </strong>{" "}
-                - {course.description}
-              </Text>
+              <Flex direction="column">
+                <Text>
+                  <strong>
+                    {course.subject} {course.courseNumber}
+                  </strong>{" "}
+                </Text>
+                <Text fontSize="small">{course.description}</Text>
+              </Flex>
               <Spacer />
               <Button
                 colorScheme="red"
